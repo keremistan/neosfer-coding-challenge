@@ -1,3 +1,8 @@
+import { MyBtn } from "./my_btn";
+
 export default function Home() {
-  return <p>Hello world!</p>;
+  return (<div>
+    <p>Hello world!</p>
+    <MyBtn />
+  </div>);
 }
