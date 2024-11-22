@@ -1,20 +1,20 @@
 'use client';
 
-export const MyBtn = () => {
+export const RemoveMovieBtn = () => {
 
     const handleClick = () => {
-        let apiRes = fetch("/api/addMovie", {
+        let apiRes = fetch("/api/removeMovie", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ title: "Interstellar" })
+            body: JSON.stringify({ id: 3 })
         });
 
         apiRes.then((res) => res.json()).then((data) => console.log(data));
 
-        console.log("Button clicked!");
+        console.log("Rmove button clicked!");
     }
 
-    return <button onClick={handleClick}>My Button</button>;
+    return <button onClick={handleClick}>Remove Movie</button>;
 }

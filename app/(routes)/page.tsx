@@ -1,8 +1,10 @@
-import { MyBtn } from "./my_btn";
+import { AddMovieBtn } from "./add_movie_btn";
+import { RemoveMovieBtn } from "./remove_movie_btn";
 
 export default function Home() {
   return (<div>
     <p>Hello world!</p>
-    <MyBtn />
+    <AddMovieBtn />
+    <RemoveMovieBtn />
   </div>);
 }
