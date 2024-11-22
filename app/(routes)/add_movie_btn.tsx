@@ -16,5 +16,5 @@ export const AddMovieBtn = () => {
         console.log("Add button clicked!");
     }
     
-    return <button onClick={handleClick}>My Button</button>;
+    return <button onClick={handleClick}>Add Movie Button</button>;
 }
