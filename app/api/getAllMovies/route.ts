@@ -12,5 +12,8 @@ export async function GET() {
     } = { movies: [] };
     const db = await JSONFilePreset("db.json", defaultData);
 
-    return NextResponse.json(db.data.movies);
+    const movies = db.data.movies;
+    console.log("Movies: ", movies);
+
+    return NextResponse.json(movies);
 }
