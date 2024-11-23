@@ -35,7 +35,7 @@ export const RatingInput = ({ movieId, movieRating, onRatingChange }: RatingInpu
                 onChange={(e) => setRating(Number(e.target.value))}
             />
             <button onClick={handleRatingChange}>
-                <FaPaperPlane />
+                <FaPaperPlane color="gray" />
             </button>
         </div>
     );

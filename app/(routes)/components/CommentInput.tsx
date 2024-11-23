@@ -43,23 +43,23 @@ export const CommentInput = ({ movieId, movieComment, onCommentChange }: Comment
             <div className="flex">
                 <p>{movieComment}</p>
                 <button className="ml-4" onClick={handleRemoveComment} aria-label="Remove Comment">
-                    <FaTrash />
+                    <FaTrash size={16} color="gray" />
                 </button>
             </div>
         );
     }
 
     return (
-        <div className="border-2 rounded flex">
+        <div className="border border-gray-800 rounded flex">
             <input
                 type="text"
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
                 className="p-2 w-full"
-                // placeholder="add comment"
+            // placeholder="add comment"
             />
             <button className="mx-4" onClick={handleCommentChange} aria-label="Submit Comment">
-                <FaArrowRight />
+                <FaArrowRight color="gray" />
             </button>
         </div>
     );
