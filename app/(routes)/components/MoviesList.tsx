@@ -15,9 +15,10 @@ type Movie = {
 
 export const MoviesList = () => {
     const [movies, setMovies] = useState<Movie[]>([]);
+    const [searchQuery, setSearchQuery] = useState<string>("");
 
-    const fetchMovies = async () => {
-        const response = await fetch("/api/getAllMovies");
+    const fetchMovies = async (query: string = "") => {
+        const response = await fetch(`/api/getAllMovies?query=${query}`);
         const data = await response.json();
         console.log("Movies fetched!", data);
         setMovies(data);
@@ -27,17 +28,27 @@ export const MoviesList = () => {
         fetchMovies();
     }, []);
 
+    useEffect(() => {
+        fetchMovies(searchQuery);
+    }, [searchQuery]);
+
     return (
         <div>
             <h1>Movies</h1>
+            <input
+                type="text"
+                placeholder="Search movies..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+            />
             <ul>
                 {movies.map((movie) => (
                     <li key={movie.id}>
                         <h2>{movie.title}</h2>
                         <p>Comment: {movie.comment == undefined ? "N/A" : movie.comment.length == 0 ? "No Comment" : movie.comment}</p>
-                        <CommentInput movieId={movie.id} onCommentChange={fetchMovies} />
+                        <CommentInput movieId={movie.id} onCommentChange={() => fetchMovies(searchQuery)} />
                         <p>Rating: {movie.rating || "N/A"}</p>
-                        <RatingInput movieId={movie.id} onRatingChange={fetchMovies} />
+                        <RatingInput movieId={movie.id} onRatingChange={() => fetchMovies(searchQuery)} />
                     </li>
                 ))}
             </ul>
