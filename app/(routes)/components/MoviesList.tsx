@@ -51,9 +51,9 @@ export const MoviesList = () => {
             <div className="flex flex-wrap">
                 {movies.map((movie) => (
                     <div className="container w-1/3 m-4 bg-slate-300 rounded" key={movie.id}>
-                        <div className="flex">
+                        <div className="flex justify-between">
                             <h2 className="text-2xl mb-2">{movie.title}</h2>
-                            <RemoveMovieBtn movieId={movie.id} onRemoveMovie={() => fetchMovies(searchQuery)} />
+                            <RemoveMovieBtn key={movie.id} movieId={movie.id} movieTitle={movie.title} onRemoveMovie={() => fetchMovies(searchQuery)} />
                         </div>
                         <div className="my-4">
                             <CommentInput movieId={movie.id} movieComment={movie.comment} onCommentChange={() => fetchMovies(searchQuery)} />
