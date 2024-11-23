@@ -1,10 +1,12 @@
 'use client';
 
+import React from "react";
 import { useState, useEffect } from "react";
 import { AddMovieBtn } from "../AddMovieBtn";
 import { RemoveMovieBtn } from "./RemoveMovieBtn";
 import { CommentInput } from "./CommentInput";
 import { RatingInput } from "./RatingInput";
+
 
 type Movie = {
     id: number;
@@ -36,7 +38,7 @@ export const MoviesList = () => {
         <div className="m-4">
             <div className="flex justify-between items-center mb-4">
                 <h1 className="text-2xl font-bold">Movies</h1>
-                <AddMovieBtn movieName="Pulp Fiction" onAddMovie={() => fetchMovies(searchQuery)} />
+                <AddMovieBtn onAddMovie={() => fetchMovies()} />
             </div>
 
             <input
@@ -47,7 +49,6 @@ export const MoviesList = () => {
                 onChange={(e) => setSearchQuery(e.target.value)}
             />
             <div className="flex flex-wrap">
-                {/* <div className="flex justify-start"> */}
                 {movies.map((movie) => (
                     <div className="container w-1/3 m-4 bg-slate-300 rounded" key={movie.id}>
                         <div className="flex">
@@ -58,7 +59,7 @@ export const MoviesList = () => {
                             <CommentInput movieId={movie.id} movieComment={movie.comment} onCommentChange={() => fetchMovies(searchQuery)} />
                         </div>
                         <div className="my-4">
-                            <RatingInput movieId={movie.id} movieRating={movie.rating} onRatingChange={() => fetchMovies(searchQuery)} />
+                            <RatingInput key={movie.id} movieId={movie.id} movieRating={movie.rating} onRatingChange={() => fetchMovies(searchQuery)} />
                         </div>
                     </div>
                 )
