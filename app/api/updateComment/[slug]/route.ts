@@ -12,18 +12,13 @@ export async function POST(req: Request,
     const body = await req.json();
     console.log("body: ", body);
 
-    // check if body contains 'comment' and it is a non-empty string
-    if (!body.comment || typeof body.comment !== 'string' || body.comment.trim().length === 0) {
-        return NextResponse.json({ message: "Invalid comment" }, { status: 400 });
-    }
-
     // check if slug is a number
     if (isNaN(parseInt(slug))) {
         return NextResponse.json({ message: "Invalid movie id" }, { status: 400 });
     }
 
     const id: number = parseInt(slug);
-    const comment: string = body.comment;
+    const comment: string = body.comment || "";
 
     console.log("Initializing db...");
     const defaultData: {

@@ -24,6 +24,18 @@ export const CommentInput = ({ movieId, onCommentChange }: CommentInputProps) =>
         setComment("");
     };
 
+    const handleRemoveComment = async () => {
+        await fetch(`/api/updateComment/${movieId}`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ comment: "" })
+        });
+
+        onCommentChange();
+    }
+
     return (
         <div>
             <input
@@ -32,6 +44,10 @@ export const CommentInput = ({ movieId, onCommentChange }: CommentInputProps) =>
                 onChange={(e) => setComment(e.target.value)}
             />
             <button onClick={handleCommentChange}>Submit Comment</button>
+
+            {/* remove comment */}
+            <button onClick={handleRemoveComment}>Remove Comment</button>
+
         </div>
     );
 };

@@ -31,9 +31,10 @@ export const MoviesList = () => {
             <h1>Movies</h1>
             <ul>
                 {movies.map((movie) => (
+
                     <li key={movie.id}>
                         <h2>{movie.title}</h2>
-                        <p>Comment: {movie.comment || "N/A"}</p>
+                        <p>Comment: {movie.comment == undefined ? "N/A" : movie.comment.length == 0 ? "No Comment" : movie.comment}</p>
                         <CommentInput movieId={movie.id} onCommentChange={fetchMovies} />
                         <p>Rating: {movie.rating || "N/A"}</p>
                     </li>
