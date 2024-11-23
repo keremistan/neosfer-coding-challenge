@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from "react";
-import { AddMovieBtn } from "../add_movie_btn";
+import { AddMovieBtn } from "../AddMovieBtn";
 import { RemoveMovieBtn } from "./RemoveMovieBtn";
 import { CommentInput } from "./CommentInput";
 import { RatingInput } from "./RatingInput";
@@ -33,14 +33,17 @@ export const MoviesList = () => {
     }, [searchQuery]);
 
     return (
-        <div>
-            <h1>Movies</h1>
-            <input
-                type="text"
-                placeholder="Search movies..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-            />
+        <div className="m-4">
+            <h1 className="text-2xl font-bold">Movies</h1>
+            <div>
+                <input
+                    type="text"
+                    placeholder="Search movies..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                />
+                <AddMovieBtn movieName="Pulp Fiction" onAddMovie={() => fetchMovies(searchQuery)} />
+            </div>
             <div className="flex flex-wrap">
                 {/* <div className="flex justify-start"> */}
                 {movies.map((movie) => (
@@ -59,8 +62,6 @@ export const MoviesList = () => {
                 )
                 )}
             </div>
-            <AddMovieBtn />
-
         </div>
     );
 };
