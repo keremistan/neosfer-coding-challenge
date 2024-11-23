@@ -41,17 +41,26 @@ export const MoviesList = () => {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
             />
-            <ul>
-                {movies.map((movie) => (
-                    <li key={movie.id}>
-                        <h2 className="text-3xl text-tahiti">{movie.title}</h2>
-                        <p className="text-red font-medium">Comment: {movie.comment == undefined ? "N/A" : movie.comment.length == 0 ? "No Comment" : movie.comment}</p>
-                        <CommentInput movieId={movie.id} onCommentChange={() => fetchMovies(searchQuery)} />
-                        <p>Rating: {movie.rating || "N/A"}</p>
-                        <RatingInput movieId={movie.id} onRatingChange={() => fetchMovies(searchQuery)} />
-                    </li>
-                ))}
-            </ul>
+            <div className="flex flex-wrap">
+                {/* <div className="flex justify-start"> */}
+                {movies.map(function (movie) {
+
+                    const isCommentEmpty = movie.comment == undefined || movie.comment.length == 0;
+
+                    return (
+                        <div className="container w-1/3 m-8 bg-slate-300 rounded" key={movie.id}>
+                            <h2 className="text-3xl mb-2">{movie.title}</h2>
+                            <div className="my-4">
+                                <CommentInput movieId={movie.id} movieComment={movie.comment} onCommentChange={() => fetchMovies(searchQuery)} />
+
+                            </div>
+
+                            <p>Rating: {movie.rating || "N/A"}</p>
+                            <RatingInput movieId={movie.id} onRatingChange={() => fetchMovies(searchQuery)} />
+                        </div>
+                    );
+                })}
+            </div>
             <AddMovieBtn />
             <RemoveMovieBtn />
         </div>
