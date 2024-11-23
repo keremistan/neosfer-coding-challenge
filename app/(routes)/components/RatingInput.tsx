@@ -2,14 +2,16 @@
 'use client';
 
 import { useState } from "react";
+import { FaPaperPlane } from "react-icons/fa";
 
 type RatingInputProps = {
     movieId: number;
+    movieRating: number | null;
     onRatingChange: () => void;
 };
 
-export const RatingInput = ({ movieId, onRatingChange }: RatingInputProps) => {
-    const [rating, setRating] = useState<number | null>(null);
+export const RatingInput = ({ movieId, movieRating, onRatingChange }: RatingInputProps) => {
+    const [rating, setRating] = useState<number | null>(movieRating);
 
     const handleRatingChange = async () => {
         await fetch(`/api/updateRating/${movieId}`, {
@@ -21,8 +23,6 @@ export const RatingInput = ({ movieId, onRatingChange }: RatingInputProps) => {
         });
 
         onRatingChange();
-
-        setRating(null);
     };
 
     return (
@@ -34,7 +34,9 @@ export const RatingInput = ({ movieId, onRatingChange }: RatingInputProps) => {
                 value={rating ?? ""}
                 onChange={(e) => setRating(Number(e.target.value))}
             />
-            <button onClick={handleRatingChange}>Submit Rating</button>
+            <button onClick={handleRatingChange}>
+                <FaPaperPlane />
+            </button>
         </div>
     );
 };

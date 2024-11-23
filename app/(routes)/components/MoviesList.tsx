@@ -55,8 +55,7 @@ export const MoviesList = () => {
 
                             </div>
 
-                            <p>Rating: {movie.rating || "N/A"}</p>
-                            <RatingInput movieId={movie.id} onRatingChange={() => fetchMovies(searchQuery)} />
+                            <RatingInput movieId={movie.id} movieRating={movie.rating} onRatingChange={() => fetchMovies(searchQuery)} />
                         </div>
                     );
                 })}
