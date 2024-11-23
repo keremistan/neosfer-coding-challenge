@@ -34,16 +34,18 @@ export const MoviesList = () => {
 
     return (
         <div className="m-4">
-            <h1 className="text-2xl font-bold">Movies</h1>
-            <div>
-                <input
-                    type="text"
-                    placeholder="Search movies..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                />
+            <div className="flex justify-between items-center mb-4">
+                <h1 className="text-2xl font-bold">Movies</h1>
                 <AddMovieBtn movieName="Pulp Fiction" onAddMovie={() => fetchMovies(searchQuery)} />
             </div>
+
+            <input
+                className="w-full p-2 mb-4 border border-gray-800 rounded"
+                type="text"
+                placeholder="Search movies..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+            />
             <div className="flex flex-wrap">
                 {/* <div className="flex justify-start"> */}
                 {movies.map((movie) => (
