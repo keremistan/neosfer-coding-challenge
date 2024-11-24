@@ -50,7 +50,7 @@ export const MoviesList = () => {
             />
             <div className="flex flex-wrap">
                 {movies.map((movie) => (
-                    <div className="container w-1/3 m-4 bg-slate-300 rounded" key={movie.id}>
+                    <div className="container w-1/3 p-4 rounded" key={movie.id}>
                         <div className="flex justify-between">
                             <h2 className="text-2xl mb-2">{movie.title}</h2>
                             <RemoveMovieBtn key={movie.id} movieId={movie.id} movieTitle={movie.title} onRemoveMovie={() => fetchMovies(searchQuery)} />

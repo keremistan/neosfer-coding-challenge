@@ -23,6 +23,8 @@ dist/
 build/
 *.egg
 
+backend/lib/
+
 # TypeScript
 node_modules/
 dist/
