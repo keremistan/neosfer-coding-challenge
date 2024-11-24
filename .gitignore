@@ -24,6 +24,7 @@ build/
 *.egg
 
 backend/lib/
+backend/.env
 
 # TypeScript
 node_modules/
