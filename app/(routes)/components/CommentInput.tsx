@@ -56,7 +56,7 @@ export const CommentInput = ({ movieId, movieComment, onCommentChange }: Comment
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
                 className="p-2 w-full"
-            // placeholder="add comment"
+                placeholder="add comment"
             />
             <button className="mx-4" onClick={handleCommentChange} aria-label="Submit Comment">
                 <FaArrowRight color="gray" />
