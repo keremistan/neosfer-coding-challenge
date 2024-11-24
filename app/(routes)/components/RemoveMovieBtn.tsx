@@ -21,7 +21,7 @@ export const RemoveMovieBtn = (
     }
 
     return (<div>
-        <button className="btn font-light btn-ghost" onClick={() => {
+        <button onClick={() => {
             const modal = document.getElementById("remove_movie_modal_" + movieId);
             if (modal) {
                 (modal as HTMLDialogElement).showModal();
