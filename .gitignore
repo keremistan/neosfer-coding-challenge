@@ -30,6 +30,7 @@ backend/.env
 node_modules/
 dist/
 *.js
+!tailwind.config.js
 *.js.map
 *.d.ts
 .next
