@@ -1,6 +1,6 @@
 'use client';
-import { useState } from "react";
 import React from "react";
+import { FaStar } from "react-icons/fa";
 
 type RatingInputProps = {
     movieId: number;
@@ -9,8 +9,6 @@ type RatingInputProps = {
 };
 
 export const RatingInput = ({ movieId, movieRating, onRatingChange }: RatingInputProps) => {
-
-    const [rating, setRating] = useState<number | null>(movieRating);
 
     const handleRatingChange = async (newRating: number) => {
         await fetch(`/api/updateRating/${movieId}`, {
@@ -26,20 +24,18 @@ export const RatingInput = ({ movieId, movieRating, onRatingChange }: RatingInpu
 
     return (
         <div>
-            <div className="rating">
-                {[1, 2, 3, 4, 5].map((value) => (
-                    <input
-                        key={"rating_2" + value}
-                        type="radio"
-                        name="rating-2"
-                        className="mask mask-star-2 bg-orange-400"
-                        checked={value === rating}
-                        onChange={function () {
-                            setRating(value);
-                            handleRatingChange(value);
-                        }}
-                    />
-                ))}
+            <div className="flex justify-end items-center">
+                <FaStar color="orange" />
+
+                <select className="select select-bordered" onChange={(e) => handleRatingChange(parseInt(e.target.value))}>
+                    <option disabled selected={movieRating == null}>R</option>
+                    <option selected={movieRating == 1} value={1}>1</option>
+                    <option selected={movieRating == 2} value={2}>2</option>
+                    <option selected={movieRating == 3} value={3}>3</option>
+                    <option selected={movieRating == 4} value={4}>4</option>
+                    <option selected={movieRating == 5} value={5}>5</option>
+                </select>
+
             </div>
         </div>
     );
