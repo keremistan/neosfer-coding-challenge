@@ -17,7 +17,9 @@ export default function RootLayout({
         <script src="http://localhost:8097"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
-      <body>{children}</body>
+      <body
+        className="bg-slate-50 w-full h-full p-4 min-h-screen"
+      >{children}</body>
     </html>
   );
 }
