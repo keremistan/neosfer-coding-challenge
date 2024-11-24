@@ -22,7 +22,6 @@ export const RatingInput = ({ movieId, movieRating, onRatingChange }: RatingInpu
         });
 
         onRatingChange();
-        
     };
 
     return (
