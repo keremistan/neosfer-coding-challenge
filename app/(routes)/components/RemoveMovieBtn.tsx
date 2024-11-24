@@ -27,7 +27,7 @@ export const RemoveMovieBtn = (
                 (modal as HTMLDialogElement).showModal();
             }
         }}>
-            <FaTrash size={16} color="gray" />
+            <FaTrash size={16} color="lightgray" />
         </button>
 
 

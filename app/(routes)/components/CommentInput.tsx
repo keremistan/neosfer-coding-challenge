@@ -40,10 +40,10 @@ export const CommentInput = ({ movieId, movieComment, onCommentChange }: Comment
 
     if (movieComment) {
         return (
-            <div className="flex">
+            <div className="flex justify-between">
                 <p>{movieComment}</p>
                 <button className="ml-4" onClick={handleRemoveComment} aria-label="Remove Comment">
-                    <FaTrash size={16} color="gray" />
+                    <FaTrash size={16} color="lightgray" />
                 </button>
             </div>
         );
