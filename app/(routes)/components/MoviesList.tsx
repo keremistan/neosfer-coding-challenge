@@ -58,7 +58,7 @@ export const MoviesList = () => {
             <div className="md:flex md:flex-wrap">
                 {movies.map((movie) => (
                     <div className="container p-4 rounded w-full md:w-1/3" key={movie.id}>
-                        <div className="bg-white p-4 rounded drop-shadow">
+                        <div className="bg-white p-4 rounded-lg drop-shadow hover:drop-shadow-lg">
                             <div className="group flex justify-between items-center">
                                 <h2 className="text-2xl mb-2 text-gray-500">{movie.title}</h2>
                                 <div className="hidden group-hover:block">
