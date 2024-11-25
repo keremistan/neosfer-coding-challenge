@@ -40,9 +40,9 @@ export const CommentInput = ({ movieId, movieComment, onCommentChange }: Comment
 
     if (movieComment) {
         return (
-            <div className="flex justify-between">
-                <p>{movieComment}</p>
-                <button className="ml-4" onClick={handleRemoveComment} aria-label="Remove Comment">
+            <div className="flex justify-between group">
+                <p className="text-gray-500" >{movieComment}</p>
+                <button className="ml-4 hidden group-hover:block" onClick={handleRemoveComment} aria-label="Remove Comment">
                     <FaTrash size={16} color="lightgray" />
                 </button>
             </div>
@@ -50,12 +50,12 @@ export const CommentInput = ({ movieId, movieComment, onCommentChange }: Comment
     }
 
     return (
-        <div className="border border-gray-800 rounded flex">
+        <div className="rounded flex">
             <input
                 type="text"
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
-                className="p-2 w-full"
+                className="p-2 w-full "
                 placeholder="add comment"
             />
             <button className="mx-4" onClick={handleCommentChange} aria-label="Submit Comment">
