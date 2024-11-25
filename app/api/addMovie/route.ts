@@ -3,7 +3,7 @@ import { JSONFilePreset } from "lowdb/node";
 import { DbType } from "@/app/types/db";
 
 export async function POST(req: Request) {
-    console.log("createMovie API route hit!");
+    console.log("add movie API route hit!");
 
     const body = await req.json();
     console.log("body: ", body);

@@ -38,6 +38,7 @@ export const RemoveMovieBtn = (
         </button>
 
 
+        {/* Dialog after clicking on remove a movie button */}
         <dialog id={"remove_movie_modal_" + movieId} className="modal">
             <div className="modal-box">
                 <h3 className="font-bold text-lg">Delete movie</h3>

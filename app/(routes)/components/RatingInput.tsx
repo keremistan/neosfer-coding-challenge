@@ -26,9 +26,10 @@ export const RatingInput = ({ movieId, movieRating, onRatingChange }: RatingInpu
         <div>
             <div className="flex justify-end items-center text-gray-500">
 
-                {
-                    movieRating == null ? <FaRegStar color="lightgray" /> : <FaStar color="orange" />
-                }
+                {/* if rated, show orange star. Else, gray hollow star */}
+                {movieRating == null ?
+                    <FaRegStar color="lightgray" />
+                    : <FaStar color="orange" />}
 
                 <select value={movieRating || 'R'} onChange={(e) => handleRatingChange(parseInt(e.target.value))}>
                     <option disabled value={'R'}>R</option>

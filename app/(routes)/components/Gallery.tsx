@@ -32,14 +32,15 @@ export const Gallery = () => {
     }, [searchQuery]);
 
     return (
-        // <div></div>
         <HomeSearchQueryContext.Provider value={{ searchQuery }}>
             <div className="m-4">
+                {/* Title and adding a movie button */}
                 <div className="flex justify-between items-center mb-4">
                     <h1 className="text-2xl font-bold">MovieLibs</h1>
                     <AddMovieBtn onAddMovie={() => fetchMovies()} />
                 </div>
 
+                {/* Search field */}
                 <input
                     className="input input-bordered w-full mb-4"
                     type="text"
@@ -47,6 +48,8 @@ export const Gallery = () => {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                 />
+
+                {/* Laying out the movie cards */}
                 <div className="md:flex md:flex-wrap">
                     {movies.map((movie) => (
                         <MovieCard key={movie.id} movie={movie} fetchMovies={fetchMovies} />

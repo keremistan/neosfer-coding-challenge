@@ -38,6 +38,7 @@ export const CommentInput = ({ movieId, movieComment, onCommentChange }: Comment
         onCommentChange();
     }
 
+    // if comment exists, show it with a trashCan icon that removes that comment
     if (movieComment) {
         return (
             <div className="flex justify-between group">
@@ -49,6 +50,7 @@ export const CommentInput = ({ movieId, movieComment, onCommentChange }: Comment
         );
     }
 
+    // if no comment, show input field and a submit button
     return (
         <div className="rounded flex">
             <input
@@ -58,6 +60,8 @@ export const CommentInput = ({ movieId, movieComment, onCommentChange }: Comment
                 className="p-2 w-full "
                 placeholder="add comment"
             />
+            
+            {/* Show the submit button only if the input field contains a nonempty value */}
             {comment && (
                 <button className="mx-4" onClick={handleCommentChange} aria-label="Submit Comment">
                     <FaArrowRight color="gray" />

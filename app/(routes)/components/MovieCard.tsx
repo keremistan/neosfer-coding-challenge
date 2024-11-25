@@ -23,15 +23,21 @@ export const MovieCard = ({ movie, fetchMovies }: MovieCardProps) => {
     return (
         <div className="container p-4 rounded w-full md:w-1/3" key={movie.id}>
             <div className="bg-white p-4 rounded-lg drop-shadow hover:drop-shadow-lg">
+
+                {/* Card title and movie delete button */}
                 <div className="group flex justify-between items-center">
                     <h2 className="text-2xl mb-2 text-gray-500">{movie.title}</h2>
                     <div className="hidden group-hover:block">
                         <RemoveMovieBtn key={movie.id} movieId={movie.id} movieTitle={movie.title} onRemoveMovie={() => fetchMovies(searchQuery)} />
                     </div>
                 </div>
+
+                {/* Comment input */}
                 <div className="my-4">
                     <CommentInput movieId={movie.id} movieComment={movie.comment} onCommentChange={() => fetchMovies(searchQuery)} />
                 </div>
+
+                {/* Rating and wishlisting an individual movie */}
                 <div className="flex justify-between items-center">
                     <div className="my-4">
                         <RatingInput key={movie.id} movieId={movie.id} movieRating={movie.rating} onRatingChange={() => fetchMovies(searchQuery)} />

@@ -14,7 +14,10 @@ export default function RootLayout({
   return (
     <html lang="de">
       <head>
+        {/* script tag for debugging the app in react devtool ui */}
         <script src="http://localhost:8097"></script>
+
+        {/* for responiveness. so that the tailwind css can react on the screensize changes */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body
