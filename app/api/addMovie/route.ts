@@ -19,6 +19,7 @@ export async function POST(req: Request) {
         movies: {
             id: number;
             title: string;
+            isInWishlist: boolean;
         }[]
     } = { movies: [] };
     const db = await JSONFilePreset("db.json", defaultData);
@@ -37,6 +38,7 @@ export async function POST(req: Request) {
     db.data.movies.push({
         id: highestId + 1,
         title: title,
+        isInWishlist: false
     });
     await db.write();
 

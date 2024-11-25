@@ -5,6 +5,7 @@ type Movie = {
   title: string;
   comment: string | null;
   rating: number | null;
+  isInWishlist: boolean;
 }
 
 type DB = {

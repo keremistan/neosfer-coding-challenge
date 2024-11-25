@@ -27,6 +27,7 @@ export async function POST(req: Request,
             title: string;
             comment: string | null;
             rating: number | null;
+            isInWishlist: boolean;
         }[]
     } = { movies: [] };
     const db = await JSONFilePreset("db.json", defaultData);

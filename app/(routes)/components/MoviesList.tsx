@@ -6,6 +6,7 @@ import { AddMovieBtn } from "../AddMovieBtn";
 import { RemoveMovieBtn } from "./RemoveMovieBtn";
 import { CommentInput } from "./CommentInput";
 import { RatingInput } from "./RatingInput";
+import { FaBookmark, FaRegBookmark } from "react-icons/fa";
 
 
 type Movie = {
@@ -13,6 +14,7 @@ type Movie = {
     title: string;
     comment: string | null;
     rating: number | null;
+    isInWishlist: boolean;
 }
 
 export const MoviesList = () => {
@@ -33,6 +35,11 @@ export const MoviesList = () => {
     useEffect(() => {
         fetchMovies(searchQuery);
     }, [searchQuery]);
+
+    const handleWishlistToggle = async (movieId: number) => {
+        await fetch(`/api/toggleWishlist?movieId=${movieId}`);
+        fetchMovies(searchQuery);
+    }
 
     return (
         <div className="m-4">
@@ -59,8 +66,15 @@ export const MoviesList = () => {
                             <div className="my-4">
                                 <CommentInput movieId={movie.id} movieComment={movie.comment} onCommentChange={() => fetchMovies(searchQuery)} />
                             </div>
-                            <div className="my-4">
-                                <RatingInput key={movie.id} movieId={movie.id} movieRating={movie.rating} onRatingChange={() => fetchMovies(searchQuery)} />
+                            <div className="flex justify-between items-center">
+                                <div className="my-4">
+                                    <RatingInput key={movie.id} movieId={movie.id} movieRating={movie.rating} onRatingChange={() => fetchMovies(searchQuery)} />
+                                </div>
+                                <div>
+                                    <button onClick={() => handleWishlistToggle(movie.id)}>
+                                        {movie.isInWishlist ? <FaBookmark /> : <FaRegBookmark />}
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
