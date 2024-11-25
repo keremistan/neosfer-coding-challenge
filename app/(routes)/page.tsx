@@ -1,4 +1,4 @@
-import { MoviesList } from "./components/MoviesList";
+import { Gallery } from "./components/Gallery";
 
 type Movie = {
   id: number;
@@ -15,7 +15,7 @@ type DB = {
 export default function Home() {
   return (
     <div>
-      <MoviesList />
+      <Gallery />
     </div>
   );
 }
