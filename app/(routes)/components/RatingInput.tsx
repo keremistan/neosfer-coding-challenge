@@ -24,10 +24,10 @@ export const RatingInput = ({ movieId, movieRating, onRatingChange }: RatingInpu
 
     return (
         <div>
-            <div className="flex justify-end items-center">
+            <div className="flex justify-end items-center text-gray-500">
                 <FaStar color="orange" />
 
-                <select className="select select-bordered" onChange={(e) => handleRatingChange(parseInt(e.target.value))}>
+                <select onChange={(e) => handleRatingChange(parseInt(e.target.value))}>
                     <option disabled selected={movieRating == null}>R</option>
                     <option selected={movieRating == 1} value={1}>1</option>
                     <option selected={movieRating == 2} value={2}>2</option>

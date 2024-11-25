@@ -59,9 +59,12 @@ export const MoviesList = () => {
                 {movies.map((movie) => (
                     <div className="container p-4 rounded w-full md:w-1/3" key={movie.id}>
                         <div className="bg-white p-4 rounded drop-shadow">
-                            <div className="flex justify-between items-center">
-                                <h2 className="text-2xl mb-2">{movie.title}</h2>
+                            <div className="group flex justify-between items-center">
+                                <h2 className="text-2xl mb-2 text-gray-500">{movie.title}</h2>
+                                <div className="hidden group-hover:block">
+
                                 <RemoveMovieBtn key={movie.id} movieId={movie.id} movieTitle={movie.title} onRemoveMovie={() => fetchMovies(searchQuery)} />
+                                </div>
                             </div>
                             <div className="my-4">
                                 <CommentInput movieId={movie.id} movieComment={movie.comment} onCommentChange={() => fetchMovies(searchQuery)} />
@@ -72,7 +75,7 @@ export const MoviesList = () => {
                                 </div>
                                 <div>
                                     <button onClick={() => handleWishlistToggle(movie.id)}>
-                                        {movie.isInWishlist ? <FaBookmark /> : <FaRegBookmark />}
+                                        {movie.isInWishlist ? <FaBookmark color="gray" /> : <FaRegBookmark color="gray" />}
                                     </button>
                                 </div>
                             </div>
