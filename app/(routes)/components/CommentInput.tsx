@@ -1,5 +1,6 @@
 'use client';
 
+import { sendApiRequest } from "@/app/utility/sendApiRequest";
 import { useState } from "react";
 import { FaTrash, FaArrowRight } from "react-icons/fa";
 
@@ -13,13 +14,9 @@ export const CommentInput = ({ movieId, movieComment, onCommentChange }: Comment
     const [comment, setComment] = useState("");
 
     const handleCommentChange = async () => {
-        await fetch(`/api/updateComment/${movieId}`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ comment })
-        });
+        let commentRes = await sendApiRequest(`/api/updateComment/${movieId}`, "POST", { comment });
+
+        console.log({ commentRes });
 
         onCommentChange();
 
@@ -60,7 +57,7 @@ export const CommentInput = ({ movieId, movieComment, onCommentChange }: Comment
                 className="p-2 w-full "
                 placeholder="add comment"
             />
-            
+
             {/* Show the submit button only if the input field contains a nonempty value */}
             {comment && (
                 <button className="mx-4" onClick={handleCommentChange} aria-label="Submit Comment">

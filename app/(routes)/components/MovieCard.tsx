@@ -5,6 +5,7 @@ import { RemoveMovieBtn } from './RemoveMovieBtn';
 import { FaBookmark, FaRegBookmark } from 'react-icons/fa';
 import { MovieType } from '../../types/movie';
 import { HomeSearchQueryContext } from './Gallery';
+import { sendApiRequest } from '@/app/utility/sendApiRequest';
 
 type MovieCardProps = {
     movie: MovieType;
@@ -16,7 +17,10 @@ export const MovieCard = ({ movie, fetchMovies }: MovieCardProps) => {
     const { searchQuery } = useContext(HomeSearchQueryContext);
 
     const handleWishlistToggle = async (movieId: number) => {
-        await fetch(`/api/toggleWishlist?movieId=${movieId}`);
+        let toggleRes = await sendApiRequest(`/api/toggleWishlist?movieId=${movieId}`, "GET");
+
+        console.log({ toggleRes });
+
         fetchMovies(searchQuery);
     }
 

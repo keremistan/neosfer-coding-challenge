@@ -1,5 +1,6 @@
 'use client';
 
+import { sendApiRequest } from "@/app/utility/sendApiRequest";
 import { useState } from "react";
 import { BsPlusSquareFill } from "react-icons/bs";
 
@@ -10,15 +11,9 @@ export const AddMovieBtn = (
     const [movieName, setMovieName] = useState<string>("");
 
     const handleClick = async () => {
-        let apiRes = await fetch("/api/addMovie", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ title: movieName })
-        });
+        let addRes = await sendApiRequest("/api/addMovie", "POST", { title: movieName });
 
-        console.log(await apiRes.json());
+        console.log({ addRes });
 
         onAddMovie();
     }

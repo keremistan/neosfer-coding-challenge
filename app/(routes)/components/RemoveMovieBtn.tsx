@@ -1,5 +1,6 @@
 'use client';
 
+import { sendApiRequest } from "@/app/utility/sendApiRequest";
 import { FaTrash } from "react-icons/fa";
 
 
@@ -14,15 +15,9 @@ export const RemoveMovieBtn = (
 ) => {
 
     const handleClick = async () => {
-        let apiRes = await fetch("/api/removeMovie", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ id: movieId })
-        });
+        let removeMovieRes = await sendApiRequest('/api/removeMovie/', "POST", { id: movieId });
 
-        console.log(await apiRes.json());
+        console.log({ removeMovieRes });
 
         onRemoveMovie();
     }

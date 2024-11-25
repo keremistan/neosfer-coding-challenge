@@ -1,4 +1,5 @@
 'use client';
+import { sendApiRequest } from "@/app/utility/sendApiRequest";
 import React from "react";
 import { FaRegStar, FaStar } from "react-icons/fa";
 
@@ -11,13 +12,9 @@ type RatingInputProps = {
 export const RatingInput = ({ movieId, movieRating, onRatingChange }: RatingInputProps) => {
 
     const handleRatingChange = async (newRating: number) => {
-        await fetch(`/api/updateRating/${movieId}`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ rating: newRating })
-        });
+        let ratingRes = await sendApiRequest(`/api/updateRating/${movieId}`, "POST", { rating: newRating });
+
+        console.log({ ratingRes });
 
         onRatingChange();
     };
