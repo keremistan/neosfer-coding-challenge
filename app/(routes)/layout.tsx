@@ -2,8 +2,8 @@ import "../_styles/global.css";
 import "../_styles/output.css";
 
 export const metadata = {
-  title: "Next.js",
-  description: "Barebone Next.js installation",
+  title: "MovieLibs",
+  description: "Your Favourite Movie Library",
 };
 
 export default function RootLayout({
