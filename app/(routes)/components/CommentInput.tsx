@@ -54,7 +54,7 @@ export const CommentInput = ({ movieId, movieComment, onCommentChange }: Comment
                 type="text"
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
-                className="p-2 w-full "
+                className={`w-full ${comment !== "" ? "px-2" : ""}`}
                 placeholder="add comment"
             />
 
