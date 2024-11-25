@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { JSONFilePreset } from "lowdb/node";
+import { DbType } from "@/app/types/db";
 
 export async function POST(req: Request,
     { params }: { params: Promise<{ slug: string }> }
@@ -21,15 +22,7 @@ export async function POST(req: Request,
     const rating: number = body.rating || 0;
 
     console.log("Initializing db...");
-    const defaultData: {
-        movies: {
-            id: number;
-            title: string;
-            comment: string | null;
-            rating: number | null;
-            isInWishlist: boolean;
-        }[]
-    } = { movies: [] };
+    const defaultData: DbType = { movies: [] };
     const db = await JSONFilePreset("db.json", defaultData);
 
     // find movie by id

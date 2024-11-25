@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { JSONFilePreset } from "lowdb/node";
+import { DbType } from "@/app/types/db";
 
 export async function POST(req: Request) {
     console.log("createMovie API route hit!");
@@ -15,13 +16,7 @@ export async function POST(req: Request) {
     const title: string = body.title;
 
     console.log("Initializing db...");
-    const defaultData: {
-        movies: {
-            id: number;
-            title: string;
-            isInWishlist: boolean;
-        }[]
-    } = { movies: [] };
+    const defaultData: DbType = { movies: [] };
     const db = await JSONFilePreset("db.json", defaultData);
 
     // get highest id

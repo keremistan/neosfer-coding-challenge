@@ -5,7 +5,7 @@ import { FaTrash, FaArrowRight } from "react-icons/fa";
 
 type CommentInputProps = {
     movieId: number;
-    movieComment: string | null;
+    movieComment?: string;
     onCommentChange: () => void;
 };
 

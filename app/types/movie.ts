@@ -1,7 +1,7 @@
 export type MovieType = {
     id: number;
     title: string;
-    comment: string | null;
-    rating: number | null;
+    comment?: string;
+    rating?: number;
     isInWishlist: boolean;
 }

@@ -3,7 +3,7 @@ import { CommentInput } from './CommentInput';
 import { RatingInput } from './RatingInput';
 import { RemoveMovieBtn } from './RemoveMovieBtn';
 import { FaBookmark, FaRegBookmark } from 'react-icons/fa';
-import { MovieType } from '../types/movie';
+import { MovieType } from '../../types/movie';
 import { HomeSearchQueryContext } from './Gallery';
 
 type MovieCardProps = {

@@ -32,7 +32,6 @@ export const AddMovieBtn = (
                 }
             }}><BsPlusSquareFill size={24} color="gray" /> Add Movie</button>
 
-
             <dialog id="add_movie_modal_1" className="modal">
                 <div className="modal-box">
                     <h3 className="font-bold text-lg">Add a new movie</h3>

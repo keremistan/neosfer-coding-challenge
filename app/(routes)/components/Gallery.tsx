@@ -3,7 +3,7 @@
 import React, { createContext } from "react";
 import { useState, useEffect } from "react";
 import { AddMovieBtn } from "./AddMovieBtn";
-import { MovieType } from "../types/movie";
+import { MovieType } from "../../types/movie";
 import { MovieCard } from "./MovieCard";
 
 type HomeSearchQueryContextType = {
@@ -24,12 +24,10 @@ export const Gallery = () => {
     };
 
     useEffect(() => {
-        console.log("Fetching movies... from the first useEffect");
         fetchMovies();
     }, []);
 
     useEffect(() => {
-        console.log("Fetching movies... from the second useEffect");
         fetchMovies(searchQuery);
     }, [searchQuery]);
 

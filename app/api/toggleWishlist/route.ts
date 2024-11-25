@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { JSONFilePreset } from "lowdb/node";
+import { DbType } from "@/app/types/db";
 
 export async function GET(req: NextRequest) {
     console.log("toggle wishlist API route hit!");
@@ -10,13 +11,7 @@ export async function GET(req: NextRequest) {
     const movieId = searchParams.get("movieId");
     console.log("movieId: ", movieId);
 
-    const defaultData: {
-        movies: {
-            id: number;
-            title: string;
-            isInWishlist: boolean;
-        }[]
-    } = { movies: [] };
+    const defaultData: DbType = { movies: [] };
     const db = await JSONFilePreset("db.json", defaultData);
 
     const allMovies = db.data.movies;

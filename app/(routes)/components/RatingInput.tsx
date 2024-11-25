@@ -4,7 +4,7 @@ import { FaRegStar, FaStar } from "react-icons/fa";
 
 type RatingInputProps = {
     movieId: number;
-    movieRating: number | null;
+    movieRating?: number;
     onRatingChange: () => void;
 };
 
@@ -30,13 +30,13 @@ export const RatingInput = ({ movieId, movieRating, onRatingChange }: RatingInpu
                     movieRating == null ? <FaRegStar color="lightgray" /> : <FaStar color="orange" />
                 }
 
-                <select onChange={(e) => handleRatingChange(parseInt(e.target.value))}>
-                    <option disabled selected={movieRating == null}>R</option>
-                    <option selected={movieRating == 1} value={1}>1</option>
-                    <option selected={movieRating == 2} value={2}>2</option>
-                    <option selected={movieRating == 3} value={3}>3</option>
-                    <option selected={movieRating == 4} value={4}>4</option>
-                    <option selected={movieRating == 5} value={5}>5</option>
+                <select value={movieRating || 'R'} onChange={(e) => handleRatingChange(parseInt(e.target.value))}>
+                    <option disabled value={'R'}>R</option>
+                    <option value={1}>1</option>
+                    <option value={2}>2</option>
+                    <option value={3}>3</option>
+                    <option value={4}>4</option>
+                    <option value={5}>5</option>
                 </select>
 
             </div>

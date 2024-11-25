@@ -2,8 +2,15 @@
 
 import { FaTrash } from "react-icons/fa";
 
+
+type RemoveMovieBtnProps = {
+    movieId: number;
+    movieTitle: string;
+    onRemoveMovie: () => void;
+};
+
 export const RemoveMovieBtn = (
-    { movieId, movieTitle, onRemoveMovie }: { movieId: number, movieTitle: string; onRemoveMovie: () => void }
+    { movieId, movieTitle, onRemoveMovie }: RemoveMovieBtnProps
 ) => {
 
     const handleClick = async () => {
