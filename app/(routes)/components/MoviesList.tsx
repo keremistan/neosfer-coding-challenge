@@ -49,7 +49,7 @@ export const MoviesList = () => {
             </div>
 
             <input
-                className="w-full p-2 mb-4 border border-gray-800 rounded"
+                className="input input-bordered w-full mb-4"
                 type="text"
                 placeholder="Search movies..."
                 value={searchQuery}

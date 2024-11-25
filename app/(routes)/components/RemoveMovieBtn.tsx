@@ -6,8 +6,8 @@ export const RemoveMovieBtn = (
     { movieId, movieTitle, onRemoveMovie }: { movieId: number, movieTitle: string; onRemoveMovie: () => void }
 ) => {
 
-    const handleClick = () => {
-        let apiRes = fetch("/api/removeMovie", {
+    const handleClick = async () => {
+        let apiRes = await fetch("/api/removeMovie", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -15,7 +15,7 @@ export const RemoveMovieBtn = (
             body: JSON.stringify({ id: movieId })
         });
 
-        apiRes.then((res) => res.json()).then((data) => console.log(data));
+        console.log(await apiRes.json());
 
         onRemoveMovie();
     }

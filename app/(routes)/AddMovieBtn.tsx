@@ -36,13 +36,13 @@ export const AddMovieBtn = (
             <dialog id="add_movie_modal_1" className="modal">
                 <div className="modal-box">
                     <h3 className="font-bold text-lg">Add a new movie</h3>
-                    <div className="modal-action">
+                    <div className="modal-action justify-center">
                         <form method="dialog">
 
                             <input
                                 type="text"
                                 placeholder="Movie name"
-                                className="input input-bordered w-full max-w-xs mb-6"
+                                className="input input-bordered w-full mb-6"
                                 onChange={(e) => setMovieName(e.target.value)}
                             />
 
