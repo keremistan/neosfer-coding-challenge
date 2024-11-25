@@ -3,22 +3,75 @@
     {
       "id": 1,
       "title": "Inception",
-      "rating": 5,
-      "comment": "Mind-bending plot"
+      "rating": 3,
+      "comment": "Nolan's dream",
+      "isInWishlist": true
     },
     {
       "id": 2,
       "title": "The Godfather",
-      "rating": 4,
-      "comment": "Captivating storyline"
-    },
-    {
-      "id": 4,
-      "title": "Interstellar"
+      "rating": 3,
+      "comment": "",
+      "isInWishlist": false
     },
     {
       "id": 5,
-      "title": "Interstellar"
+      "title": "Pulp Fiction",
+      "comment": "Tarantino the storyteller",
+      "rating": 4,
+      "isInWishlist": true
+    },
+    {
+      "id": 8,
+      "title": "Kill Bill",
+      "rating": 3,
+      "comment": "",
+      "isInWishlist": true
+    },
+    {
+      "id": 9,
+      "title": "Django Unchained",
+      "rating": 5,
+      "isInWishlist": false,
+      "comment": ""
+    },
+    {
+      "id": 10,
+      "title": "Ready Player One",
+      "rating": 3,
+      "isInWishlist": true,
+      "comment": "Spielberg rocks"
+    },
+    {
+      "id": 11,
+      "title": "About Time",
+      "isInWishlist": false,
+      "comment": ""
+    },
+    {
+      "id": 13,
+      "title": "Kramer vs Kramer",
+      "isInWishlist": false,
+      "rating": 2
+    },
+    {
+      "id": 14,
+      "title": "American Beauty",
+      "rating": 2,
+      "isInWishlist": false,
+      "comment": "Spacy!"
+    },
+    {
+      "id": 16,
+      "title": "Black Mirror",
+      "isInWishlist": false
+    },
+    {
+      "id": 17,
+      "title": "The Prestige",
+      "isInWishlist": true,
+      "rating": 3,
+      "comment": ""
     }
   ]
 }
