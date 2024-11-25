@@ -58,9 +58,11 @@ export const CommentInput = ({ movieId, movieComment, onCommentChange }: Comment
                 className="p-2 w-full "
                 placeholder="add comment"
             />
-            <button className="mx-4" onClick={handleCommentChange} aria-label="Submit Comment">
-                <FaArrowRight color="gray" />
-            </button>
+            {comment && (
+                <button className="mx-4" onClick={handleCommentChange} aria-label="Submit Comment">
+                    <FaArrowRight color="gray" />
+                </button>
+            )}
         </div>
     );
 };

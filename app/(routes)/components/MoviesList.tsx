@@ -44,7 +44,7 @@ export const MoviesList = () => {
     return (
         <div className="m-4">
             <div className="flex justify-between items-center mb-4">
-                <h1 className="text-2xl font-bold">Movies</h1>
+                <h1 className="text-2xl font-bold">MovieLibs</h1>
                 <AddMovieBtn onAddMovie={() => fetchMovies()} />
             </div>
 
