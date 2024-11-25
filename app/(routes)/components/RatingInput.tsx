@@ -1,6 +1,6 @@
 'use client';
 import React from "react";
-import { FaStar } from "react-icons/fa";
+import { FaRegStar, FaStar } from "react-icons/fa";
 
 type RatingInputProps = {
     movieId: number;
@@ -25,7 +25,10 @@ export const RatingInput = ({ movieId, movieRating, onRatingChange }: RatingInpu
     return (
         <div>
             <div className="flex justify-end items-center text-gray-500">
-                <FaStar color="orange" />
+
+                {
+                    movieRating == null ? <FaRegStar color="lightgray" /> : <FaStar color="orange" />
+                }
 
                 <select onChange={(e) => handleRatingChange(parseInt(e.target.value))}>
                     <option disabled selected={movieRating == null}>R</option>
