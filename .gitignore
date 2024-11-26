@@ -34,3 +34,5 @@ dist/
 *.js.map
 *.d.ts
 .next
+
+app/_styles/output.css

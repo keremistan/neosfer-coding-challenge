@@ -1,0 +1,418 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`MovieCard 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="container p-4 rounded w-full md:w-1/3"
+      >
+        <div
+          class="bg-white p-4 rounded-lg drop-shadow hover:drop-shadow-lg"
+        >
+          <div
+            class="group flex justify-between items-center"
+          >
+            <h2
+              class="text-2xl mb-2 text-gray-500"
+            >
+              Test Movie
+            </h2>
+            <div
+              class="hidden group-hover:block"
+            >
+              <div>
+                <button>
+                  <svg
+                    color="lightgray"
+                    fill="currentColor"
+                    height="16"
+                    stroke="currentColor"
+                    stroke-width="0"
+                    style="color: lightgray;"
+                    viewBox="0 0 448 512"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
+                    />
+                  </svg>
+                </button>
+                <dialog
+                  class="modal"
+                  id="remove_movie_modal_1"
+                >
+                  <div
+                    class="modal-box"
+                  >
+                    <h3
+                      class="font-bold text-lg"
+                    >
+                      Delete movie
+                    </h3>
+                    <div
+                      class="modal-action"
+                    >
+                      <form
+                        method="dialog"
+                      >
+                        <p
+                          class="mb-4"
+                        >
+                          Do you really want to remove the following movie from your favourite movie library?
+                        </p>
+                        <p
+                          class="mb-8 text-2xl"
+                        >
+                          Test Movie
+                        </p>
+                        <button
+                          class="btn font-light"
+                        >
+                          Cancel
+                        </button>
+                        <button
+                          class="btn ml-8 btn-error"
+                        >
+                          Delete
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </dialog>
+              </div>
+            </div>
+          </div>
+          <div
+            class="my-4"
+          >
+            <div
+              class="rounded flex"
+            >
+              <input
+                class="w-full "
+                placeholder="add comment"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="flex justify-between items-center"
+          >
+            <div
+              class="my-4"
+            >
+              <div>
+                <div
+                  class="flex justify-end items-center text-gray-500"
+                >
+                  <svg
+                    color="orange"
+                    fill="currentColor"
+                    height="1em"
+                    stroke="currentColor"
+                    stroke-width="0"
+                    style="color: orange;"
+                    viewBox="0 0 576 512"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                    />
+                  </svg>
+                  <select>
+                    <option
+                      disabled=""
+                      value="R"
+                    >
+                      R
+                    </option>
+                    <option
+                      value="1"
+                    >
+                      1
+                    </option>
+                    <option
+                      value="2"
+                    >
+                      2
+                    </option>
+                    <option
+                      value="3"
+                    >
+                      3
+                    </option>
+                    <option
+                      value="4"
+                    >
+                      4
+                    </option>
+                    <option
+                      value="5"
+                    >
+                      5
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div>
+              <button>
+                <svg
+                  color="gray"
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  style="color: gray;"
+                  viewBox="0 0 384 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M336 0H48C21.49 0 0 21.49 0 48v464l192-112 192 112V48c0-26.51-21.49-48-48-48zm0 428.43l-144-84-144 84V54a6 6 0 0 1 6-6h276c3.314 0 6 2.683 6 5.996V428.43z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="container p-4 rounded w-full md:w-1/3"
+    >
+      <div
+        class="bg-white p-4 rounded-lg drop-shadow hover:drop-shadow-lg"
+      >
+        <div
+          class="group flex justify-between items-center"
+        >
+          <h2
+            class="text-2xl mb-2 text-gray-500"
+          >
+            Test Movie
+          </h2>
+          <div
+            class="hidden group-hover:block"
+          >
+            <div>
+              <button>
+                <svg
+                  color="lightgray"
+                  fill="currentColor"
+                  height="16"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  style="color: lightgray;"
+                  viewBox="0 0 448 512"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
+                  />
+                </svg>
+              </button>
+              <dialog
+                class="modal"
+                id="remove_movie_modal_1"
+              >
+                <div
+                  class="modal-box"
+                >
+                  <h3
+                    class="font-bold text-lg"
+                  >
+                    Delete movie
+                  </h3>
+                  <div
+                    class="modal-action"
+                  >
+                    <form
+                      method="dialog"
+                    >
+                      <p
+                        class="mb-4"
+                      >
+                        Do you really want to remove the following movie from your favourite movie library?
+                      </p>
+                      <p
+                        class="mb-8 text-2xl"
+                      >
+                        Test Movie
+                      </p>
+                      <button
+                        class="btn font-light"
+                      >
+                        Cancel
+                      </button>
+                      <button
+                        class="btn ml-8 btn-error"
+                      >
+                        Delete
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </dialog>
+            </div>
+          </div>
+        </div>
+        <div
+          class="my-4"
+        >
+          <div
+            class="rounded flex"
+          >
+            <input
+              class="w-full "
+              placeholder="add comment"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="flex justify-between items-center"
+        >
+          <div
+            class="my-4"
+          >
+            <div>
+              <div
+                class="flex justify-end items-center text-gray-500"
+              >
+                <svg
+                  color="orange"
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  style="color: orange;"
+                  viewBox="0 0 576 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                  />
+                </svg>
+                <select>
+                  <option
+                    disabled=""
+                    value="R"
+                  >
+                    R
+                  </option>
+                  <option
+                    value="1"
+                  >
+                    1
+                  </option>
+                  <option
+                    value="2"
+                  >
+                    2
+                  </option>
+                  <option
+                    value="3"
+                  >
+                    3
+                  </option>
+                  <option
+                    value="4"
+                  >
+                    4
+                  </option>
+                  <option
+                    value="5"
+                  >
+                    5
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div>
+            <button>
+              <svg
+                color="gray"
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="0"
+                style="color: gray;"
+                viewBox="0 0 384 512"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M336 0H48C21.49 0 0 21.49 0 48v464l192-112 192 112V48c0-26.51-21.49-48-48-48zm0 428.43l-144-84-144 84V54a6 6 0 0 1 6-6h276c3.314 0 6 2.683 6 5.996V428.43z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
